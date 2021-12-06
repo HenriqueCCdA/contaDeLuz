@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafico</title>
+</head>
+<body>
+
+<div >
+  <canvas width="800" height="400" id="chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+    const x = {{date|safe}};
+
+    const y = {{MW}};
+
+    const data = {
+        labels: x,
+        datasets: [
+            {
+                label: 'MW',
+                backgroundColor: 'rgb(102, 178, 255)',
+                borderColor: 'rgb(102, 178, 255)',
+                data: y,
+            },
+            {
+                label: 'R$',
+                backgroundColor: 'rgb(153, 255, 51)',
+                borderColor: 'rgb(153, 255, 51)',
+                data: y,
+            }
+        ]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: { responsive: false}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('chart'),
+        config
+    );
+
+</script>
+
+</body>
+</html>
