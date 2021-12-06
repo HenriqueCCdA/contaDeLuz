@@ -32,12 +32,14 @@ SECRET_KEY = config('SECRET_KEY', cast=str)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool, default=False)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+AUTH_USER_MODEL = 'base.User'
 
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 
 INSTALLED_APPS = [
+    'luz.base',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
