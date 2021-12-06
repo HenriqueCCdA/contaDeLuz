@@ -1,0 +1,7 @@
+model-bakery
+flake8
+pytest-django
+pytest-cov
+codecov
+django-debug-toolbar
+-r requirements.txt
