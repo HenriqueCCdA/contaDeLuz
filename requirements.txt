@@ -16,7 +16,7 @@ decorator==5.1.0
     # via ipython
 dj-database-url==0.5.0
     # via -r .\requirements.in
-django==3.2.9
+django==3.2.10
     # via
     #   -r .\requirements.in
     #   django-extensions
@@ -34,7 +34,7 @@ parso==0.8.3
     # via jedi
 pickleshare==0.7.5
     # via ipython
-prompt-toolkit==3.0.23
+prompt-toolkit==3.0.24
     # via ipython
 psycopg2-binary==2.9.2
     # via -r .\requirements.in

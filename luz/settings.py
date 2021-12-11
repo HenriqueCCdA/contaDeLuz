@@ -40,6 +40,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 INSTALLED_APPS = [
     'luz.base',
+    'luz.conta',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
