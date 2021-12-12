@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graph - Chartjs</title>
-</head>
-<body>
+{% extends "base/base.html" %}
 
+
+
+{% block main %}
 <div>
     <h1> Chartjs </h1>
 </div>
+
 <div>
   <canvas width="800" height="400" id="chart"></canvas>
 </div>
 
+{% endblock main %}
+
+{% block chartjs %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
@@ -55,6 +54,4 @@
     );
 
 </script>
-
-</body>
-</html>
+{% endblock chartjs%}
