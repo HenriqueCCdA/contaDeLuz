@@ -17,12 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
-from luz.base import views
+from luz.base.views import home
+from luz.conta.views import graph
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
+    path('', home, name='home'),
+    path('graph/<slug:slug>', graph, name='graph')
 ]
 
 if settings.DEBUG:
