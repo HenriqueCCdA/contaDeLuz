@@ -2,7 +2,7 @@ import pytest
 from model_bakery import baker
 
 from luz.conta.models import Conta
-
+from luz.base.django_assertions import assertion_assert_almost_equal
 
 MOUNTH_NUMBER = 2
 
@@ -24,4 +24,4 @@ def test_models_attributes(tow_bills):
     for bill, bill_from_db in zip(tow_bills, tow_bills_from_db):
         assert bill_from_db.date == bill.date
         assert bill_from_db.amount_paid == bill.amount_paid
-        assert bill_from_db.mw == bill.mw
+        assertion_assert_almost_equal(bill_from_db.mw, bill.mw, places=2)
