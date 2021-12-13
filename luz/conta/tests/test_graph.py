@@ -8,20 +8,26 @@ from luz.base.django_assertions import assertion_contains
 
 
 @pytest.fixture
-def url(db):
+def url():
     return reverse('graph', args=('chartjs',))
 
 
-def test_page_status_code_200(client: Client, url):
-    resp = client.get(url)
+@pytest.fixture
+def response(client: Client, url, db):
+    return client.get(url)
 
-    assert resp.status_code == HTTPStatus.OK
+
+def test_page_status_code_200(response):
+    assert response.status_code == HTTPStatus.OK
 
 
 def test_reverse(url):
     assert '/graph/chartjs' == url
 
 
-def test_content(client: Client, url):
-    resp = client.get(url)
-    assertion_contains(resp, 'Chartjs')
+def test_content(response):
+    assertion_contains(response, 'Chartjs')
+
+
+def test_graph_navbar(response):
+    assertion_contains(response, '<a class="nav-link active" href="/graph/chartjs">Chartjs</a>')
