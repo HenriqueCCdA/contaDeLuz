@@ -3,12 +3,26 @@
 
 
 {% block main %}
-<div>
-    <h1> Chartjs </h1>
+
+<div class="row">
+	<div class="col-md-12 my-footer">
+        <nav>
+	        <ol class="breadcrumb">
+		        <li class="breadcrumb-item">
+			        <a href="{% url 'home' %}">Home</a>
+		        </li>
+		        <li class="breadcrumb-item active">
+			        Chartjs
+		        </li>
+	        </ol>
+        </nav>
+    </div>
 </div>
 
-<div>
-  <canvas width="800" height="400" id="chart"></canvas>
+<div class="row">
+    <div class="col-md-12">
+        <canvas  class="my-canvas" width=1000 height=500 id="chart"></canvas>
+    </div>
 </div>
 
 {% endblock main %}
@@ -43,9 +57,9 @@
     };
 
     const config = {
-        type: 'bar',
+        type: 'line',
         data: data,
-        options: { responsive: false}
+        options: { responsive: true}
     };
 
     const myChart = new Chart(
